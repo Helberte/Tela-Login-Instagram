@@ -1,0 +1,183 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,500;1,300&display=swap');
+
+@font-face {
+  font-family: 'Grandista';
+  src: url('Grandista.otf') format('opentype'),
+  url('Grandista.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+/* 
+  tipos de format()
+
+  opentype (otf)
+  truetype (ttf)
+  embedded-opentype
+  truetype-aat (App Advenced typography)
+  svg
+*/
+*{
+  box-sizing: border-box;
+  text-decoration: none;
+  margin: 0;
+  padding: 0;
+}
+body{
+  font-family: 'Roboto', sans-serif;
+}
+body, .container{
+  background-color: rgb(247, 247, 247);
+}
+.container{
+  display: flex;  
+  width: 70%;
+  min-height: 88vh;
+  margin: auto;
+  padding: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+/* SESSÃO IMAGEM DO CELULAR */
+
+.card-cell{
+  min-height: 585px;
+  min-width: 350px;
+
+  display: flex;
+  flex-direction: row;
+  position: relative;
+  margin-right: 35px;
+  padding-right: 45px;
+  box-sizing: content-box;
+}
+
+.card-cell .cells{
+  height: 98%;
+  width: 72%;
+}
+
+.card-cell .cells-1{
+  align-self: flex-end;
+  position: absolute;
+  right: 0;
+}
+
+.card-cell .cells-1 img{
+  width: 100%;
+  height: 100%;
+}
+.card-cell .cells-2{
+  align-self: flex-start;  
+}
+.card-cell .cells-2 img{
+  width: 100%;
+  height: 100%;
+}
+.card-cell .cells-2{
+  width: 76%;
+}
+
+/* SESSÃO TELA DE LOGIN */
+
+.container .login{
+  min-width: 350px;
+  min-height: 350px;
+  background-color: rgb(255, 255, 255);
+  border: solid 1px #ccc;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  padding: 15px 0;
+}
+
+.container .login h2{
+  font-family: 'Grandista', 'Roboto', sans-serif;
+  font-size: 38px;
+  font-weight: 200;
+}
+
+.container .login .image-perfil{
+  width: 102px;
+ 
+}
+.container .login .image-perfil img{
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+.container .login button{
+  width: 250.45px;
+  min-height: 28px;
+  background-color: rgb(0, 149, 246);
+  border: none;
+  color: white;
+  font-weight: 600;
+  border-radius: 4px;
+}
+.container .login button:hover{
+  cursor: pointer;
+}
+.container .login p{
+  font-size: 13.2px;
+  color: rgb(58, 57, 57);
+}
+.container .login p a{
+  font-weight: 500;
+  color: rgb(0, 149, 246);
+}
+
+/* RESPONSIVIDADE */
+
+@media(max-width:875px){
+  .container{
+    flex-direction: column;
+    height: 60vh;
+    justify-content: center;
+    
+    padding: 30px 0 61px 0;
+  }
+  .container .card-cell{
+    position: absolute;
+    z-index: -10;
+  }
+  .container .card-cell .cells img{
+    height: 10%;
+    width: 10%;
+  }
+}
+@media(max-width:666px){
+  .container{
+    min-width: 100%;
+  }
+}
+@media(max-width:450px){
+  .container .login{
+    border: none;
+    width: 100%;
+    background-color: rgb(247, 247, 247);
+  }
+  .container{
+    padding: 0;
+    justify-content: flex-start;
+  }
+}
+@media(max-width:300px){
+  .container .card-cell{
+    width: 10px;
+    min-height: 0;
+    min-width: 0;
+  }
+  .container .card-cell .cells img{
+    width: 1px;
+  }
+  .container .card-cell .cells-1{
+    width: 10px;
+    height: 10px;
+  }
+  .container .login{
+    min-width: 0;
+  }
+}
